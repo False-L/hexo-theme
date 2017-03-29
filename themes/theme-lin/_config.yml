@@ -1,0 +1,12 @@
+menu:
+ 主页: /
+ 标签: /tags
+ 归档: /archives
+ 分类: /categories
+ #荒芜之地: /room
+ 关于: /about
+ 
+
+ ##默认theme中的source文件夹
+favicon: /favicon.ico
+avatar: /images/avatar.gif

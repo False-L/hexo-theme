@@ -1,0 +1,32 @@
+<aside class="siderba">
+    <div class="sider-inner">
+        <section class="sider-ifo">
+            <a href="javascript:" class="theme-author-a-img"><img src="<%- url_for(theme.avatar)%>" class="theme-author-img" alt="暂无头像或还未加载"/></a>
+            <div class="sider-author"><%= config.author %></div>
+            <div class="sider-description"><%= config.description %></div>
+            <nav class="sider-nav">
+                <ul class="sider-nav-ul">
+                <li class="sider-nav-item">
+                    <a href="<%- url_for(theme.menu.归档)%>">
+                        <span><%- site.posts.length %><span>
+                    </a><span>日志</span>
+                </li>
+                <li class="sider-nav-item">
+                    <a href="<%- url_for(theme.menu.标签)%>">
+                        <span><%- site.tags.length %></span>
+                    </a>
+                    <span>标签</span>
+                </li>
+                <li class="sider-nav-item">
+                    <a href="<%- url_for(theme.menu.分类)%>">
+                        <span><%- site.categories.length %></span>
+                    </a>
+                        <span>类别</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="author-link">
+            </div>
+        </section>
+    </div>
+</aside>

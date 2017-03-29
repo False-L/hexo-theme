@@ -1,0 +1,40 @@
+
+<%-partial('_partial/sider') %>
+<section class="single-post">
+   <article class="post">
+    <div class="post-title">
+        <a href="" class="post-title-link"><%= page.title %></a>
+    </div>
+    <nav class="post-nav">
+    <ul class="post-nav-ul">
+    <li class="post-nav-item">
+        <span class="post-date">发表于<%- date(page.date,"YYYY-MM-DD")%></sapn>
+        </li>
+        <li class="post-nav-item"><span class="">分类于<% if (page.categories && page.categories.length){ %>
+        <%- list_categories(page.categories, {show_count: false,class: 'article-categories'}) %>
+        <% } %></sapn>
+            </li>
+        <li class="post-nav-item">
+        标签<% if (page.tags && page.tags.length){ %>
+        <%- list_tags(page.tags, {show_count: false,class: 'article-tags'}) %>
+        <% } %>
+        </li>
+    </ul>
+    </nav>
+        <span>目录：</span> <%- toc(page.content,{list_number:false}) %>
+    <%if (page.images) { %>
+    <div class="post-image">
+    <%- image_tag(page.images,{class: 'post-img',alt: '文章图片'} ) %>
+    </div>
+    <% } %>
+    <%if(page.description) {%>
+    <div class="post-description">
+    <span>“<%= page.description %>”</span>
+    </div>
+    <%}%>
+    <div class="post-content">
+     <%- page.content %>
+    </div>
+    </article>
+    </section>
+ 

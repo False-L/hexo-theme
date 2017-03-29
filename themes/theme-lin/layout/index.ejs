@@ -1,0 +1,48 @@
+
+<%-partial('_partial/banner') %>
+<h1> RWBY是一部很不错的动画哦</h1>
+<div class="post-wrap">
+<section class="posts">
+<% page.posts.each(function(post){ %>
+    <article class="post">
+    <div class="post-title">
+        <a href="<%- url_for(post.path) %>" class="post-title-link"><%= post.title%></a>
+    </div>
+    <nav class="post-nav">
+    <ul class="post-nav-ul">
+       <li class="post-nav-item">
+        <span class="post-date">发表于<%- date(post.date,"YYYY-MM-DD")%></sapn>
+        </li>
+        <li class="post-nav-item"><span class="">分类于<% if (post.categories && post.categories.length){ %>
+        <%- list_categories(post.categories, {show_count: false,class: 'article-categories'}) %>
+        <% } %></sapn>
+            </li>
+        <li class="post-nav-item">
+        标签<% if (post.tags && post.tags.length){ %>
+        <%- list_tags(post.tags, {show_count: false,class: 'article-tags'}) %>
+        <% } %>
+        </li>
+    </ul>
+    </nav>
+    <%if (post.images) { %>
+    <div class="post-image">
+    <%- image_tag(post.images,{class: 'post-img',alt: '文章图片'} ) %>
+    </div>
+    <% } %>
+    <%if(post.description) {%>
+    <div class="post-description">
+    <span>“<%= post.description %>”</span>
+    </div>
+    <%}%>
+    <div class="post-content">
+        <%- post.excerpt %>
+    </div>
+    <div class="post-button">
+    <a href="<%- url_for(post.path) %>">阅读全文>></a>
+    </div>
+    </article>
+<% }) %>
+<%-partial('_partial/paginator') %>
+</section>
+</div>
+<%-partial('_partial/sider') %>

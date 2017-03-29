@@ -1,0 +1,49 @@
+
+@bodysize:960px;
+@bodyHeight:600px;
+body{
+    position: relative;
+    font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+    background: #f5f7f9;
+   // background: white;
+}
+a{
+    text-decoration-line: none;
+    color:#555;
+    &:hover{
+        color:peru
+    }
+}
+.container{
+    position:relative;
+    max-width: @bodysize;
+    min-height:@bodyHeight;
+    margin: 0 auto;
+    .main{
+        position:relative;
+        padding-bottom:150px;
+        &::before,&::after{
+            content:"";
+            display:table;
+        }
+        &::after{
+            clear:both;
+        }
+    }
+}
+
+@import "_partial/header";
+@import "_partial/banner";
+@import "_partial/sider";
+//
+@import "_partial/tags";
+@import "_partial/archive";
+@import "_partial/category";
+//
+@import "_partial/posts";
+@import "_partial/post";
+@import "_partial/paginator";
+@import "_partial/footer";
