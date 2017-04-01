@@ -57,7 +57,7 @@ date_format: YYYY-MM-DD
 
 # Pagination 分页
 ## Set per_page to 0 to disable pagination
-per_page: 7
+per_page: 15
 pagination_dir: page
 
 # Extensions 

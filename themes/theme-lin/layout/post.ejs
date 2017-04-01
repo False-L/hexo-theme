@@ -37,4 +37,23 @@
     </div>
     </article>
     </section>
- 
+
+    <% if (!is_home() && page.comments){ %>
+    <% if (theme.duoshuo.on) { %>
+      <%- partial('_partial/comments/duoshuo', {
+          key: post.path,
+          title: post.title,
+          url: config.url+url_for(post.path),
+          }) %>
+    <% } else if (theme.youyan.on) { %>
+        <%- partial('_partial/comments/youyan') %>
+    <% } else if (theme.disqus.on) { %>
+        <%- partial('_partial/comments/disqus', {
+            shortname: theme.disqus.shortname
+          }) %>
+    <% } else if (config.disqus_shortname) { %>
+        <%- partial('_partial/comments/disqus', {
+            shortname: config.disqus_shortname
+          }) %>
+    <% } %>
+<% } %>

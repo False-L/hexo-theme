@@ -1,0 +1,30 @@
+<div id="archive">
+  
+<section class="archive">
+    <%- list_archives({type:'monthly',class:"archives",show_count:true}) %>
+    <span class="archive-move-on"></span>
+    <span class="archive-page-counter">
+    <!--目前已有：<%- page.posts.length %> 篇日志-->
+    </span>
+    <ul class="post-archive">
+    <% var yeardate%>
+    <% page.per_page=20%>
+    <% page.posts.each(function(post) { %>
+    <% var year=date(post.date,'YYYY')%>
+    <li class="post-item">
+      <%if(year!==yeardate){%>
+      <% yeardate=year %>
+        <h2 class="post-date-title"><%= yeardate%></h2>
+      <%}%>
+        <span class="post-date"><%=date(post.date, "YYYY/MM/DD") %></span>
+        <a class="post-title"href="<%- url_for(post.path) %>"><%=post.title%></a>
+      </li>
+    <%})%>
+  </ul>
+</section>
+<% if(page.total >1) { %>
+<nav class="page-nav">
+<%- paginator({prev_text:"上一页",next_text:" 下一页"}) %>
+</nav>
+<% } %>
+</div>
