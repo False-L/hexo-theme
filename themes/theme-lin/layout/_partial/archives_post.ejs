@@ -11,6 +11,7 @@
     <% page.per_page=20%>
     <% page.posts.each(function(post) { %>
     <% var year=date(post.date,'YYYY')%>
+    
     <li class="post-item">
       <%if(year!==yeardate){%>
       <% yeardate=year %>

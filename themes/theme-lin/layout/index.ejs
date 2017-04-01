@@ -10,13 +10,15 @@
     </div>
     <nav class="post-nav">
     <ul class="post-nav-ul">
+        <i class="icon iconfont icon-fabiao"></i>
        <li class="post-nav-item">
         <span class="post-date">发表于<%- date(post.date,"YYYY-MM-DD")%></sapn>
         </li>
+        <i class="icon iconfont icon-fenlei"></i>
         <li class="post-nav-item"><span class="">分类于<% if (post.categories && post.categories.length){ %>
         <%- list_categories(post.categories, {show_count: false,class: 'article-categories'}) %>
-        <% } %></sapn>
-            </li>
+        <% } %></sapn></li>
+        <i class="icon iconfont icon-tag"></i>
         <li class="post-nav-item">
         标签<% if (post.tags && post.tags.length){ %>
         <%- list_tags(post.tags, {show_count: false,class: 'article-tags'}) %>

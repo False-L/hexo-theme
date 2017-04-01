@@ -3,7 +3,17 @@
     <nav class="header-nav">
     <ul class="menu">
     <%for(name in theme.menu){%>
-        <li class="menu-item"><a href="<%- url_for(theme.menu[name])%>" class="menu-item-link"><%= name%></a></li>
+    <% if(name=='主页') { %>
+        <li class="menu-item"><a href="<%- url_for(theme.menu[name])%>" class="menu-item-link"><i class="icon iconfont icon-shouye-shouye"></i><%= name%></a></li>
+    <%} else if(name=='标签'){%>
+    <li class="menu-item"><a href="<%- url_for(theme.menu[name])%>" class="menu-item-link"><i class="icon iconfont icon-tag"></i><%= name%></a></li>
+    <%} else if(name=='归档'){%>
+    <li class="menu-item"><a href="<%- url_for(theme.menu[name])%>" class="menu-item-link"><i class="icon iconfont icon-guidang"></i><%= name%></a></li>
+    <%} else if(name=='分类'){%>
+    <li class="menu-item"><a href="<%- url_for(theme.menu[name])%>" class="menu-item-link"><i class="icon iconfont icon-fenlei"></i><%= name%></a></li>
+    <%}else{%>
+    <li class="menu-item"><a href="<%- url_for(theme.menu[name])%>" class="menu-item-link"><i class="icon iconfont icon-icnavabout"></i><%= name%></a></li>
+    <%}%>
     <%}%>
     </ul>
     </nav>
