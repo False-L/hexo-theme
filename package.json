@@ -1,9 +1,8 @@
 {
   "name": "theme-lin",
   "version": "0.0.0",
-
   "hexo": {
-    "version": "3.2.2"
+    "version": "3.3.1"
   },
   "dependencies": {
     "hexo": "^3.2.0",
